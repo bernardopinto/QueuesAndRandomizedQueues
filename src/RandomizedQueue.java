@@ -24,7 +24,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
 
     public void enqueue(Item item) {
-        if (item == null) throw new NullPointerException("Item cannot be null");
+        if (item == null) throw new IllegalArgumentException("Item cannot be null");
         if (n == queue.length) resize(2 * queue.length);
         queue[n++] = item;
     }
@@ -61,7 +61,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     private class RandomizedQueueIterator implements Iterator<Item> {
 
         private int iterationIndex;
-        private int[] indices;
+        private final int[] indices;
 
         public RandomizedQueueIterator() {
             iterationIndex = 0;
@@ -80,7 +80,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
         @Override
         public Item next() {
-            if(!hasNext()) throw new NoSuchElementException("Iteration has no more next elements");
+            if (!hasNext()) throw new NoSuchElementException("Iteration has no more next elements");
             int currentIndex = indices[iterationIndex++];
             return queue[currentIndex];
         }
@@ -88,6 +88,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
+        //Already tested randomized Queue
 
     }
 }

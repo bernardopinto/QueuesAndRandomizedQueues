@@ -1,9 +1,10 @@
 import edu.princeton.cs.algs4.StdIn;
+
 public class Permutation {
 
     public static void main(String[] args) {
         int k = Integer.parseInt(args[0]);
-        if(k <= 0 ) {
+        if (k <= 0) {
             throw new IllegalArgumentException("Insert an integer greater than 0");
         }
         RandomizedQueue<String> randomizedQueue = new RandomizedQueue<>();
