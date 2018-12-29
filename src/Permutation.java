@@ -9,17 +9,7 @@ public class Permutation {
         }
         RandomizedQueue<String> randomizedQueue = new RandomizedQueue<>();
 
-        System.out.println("Enter the word 'done' when finished writing input");
-
-        String input = "";
-
-        while (!input.equals("done")) {
-            System.out.println("enter a string value: ");
-            input = StdIn.readString();
-            randomizedQueue.enqueue(input);
-        }
-        for (int i = 0; i < k; i++) {
-            System.out.println(randomizedQueue.dequeue());
-        }
+        while (!StdIn.isEmpty()) randomizedQueue.enqueue(StdIn.readString());
+        for (int i = 0; i < k; i++) System.out.println(randomizedQueue.dequeue());
     }
 }
